@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-example-app';
-  toolbarText = 'Dev-ops-kurssin harjoitusprojekti';
+  toolbarText = 'DevOps-kurssin harjoitusprojekti';
 }
