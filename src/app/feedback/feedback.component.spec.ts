@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FeedbackComponent } from './feedback.component';
 
+
 //RUN TEST:
 //ng test --include=src/app/feedback/feedback.component.spec.ts
 
@@ -8,10 +9,13 @@ describe('FeedbackComponent', () => {
   let component: FeedbackComponent;
   let fixture: ComponentFixture<FeedbackComponent>;
 
+
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [FeedbackComponent]
     })
+
       .compileComponents();
 
     fixture = TestBed.createComponent(FeedbackComponent);
@@ -29,4 +33,10 @@ describe('FeedbackComponent', () => {
     fixture.detectChanges();
     expect(ctrl?.valid).toBeFalsy();
   });
+
+  /*it('cancel navigates to home page', () => {
+    const routerSpy = spyOn(router, 'navigate');
+    component.cancel();
+    expect(routerSpy).toHaveBeenCalledWith(['home']);
+  });*/
 });
