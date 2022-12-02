@@ -5,7 +5,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FeedbackComponent } from './feedback.component';
 
 
-
 //RUN TEST:
 //ng test --include=src/app/feedback/feedback.component.spec.ts
 
@@ -75,6 +74,7 @@ describe('FeedbackComponent', () => {
     ctrl?.setValue('@');
     fixture.detectChanges();
     expect(ctrl?.valid).toBeFalsy();
+    //expect(ctrl).toContain('@');
   });
 
   it('cancel navigates to home page', () => {
