@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Navigation, Router, RouterModule } from '@angular/router';
 import { FeedbackComponent } from './feedback.component';
 
 
@@ -8,12 +9,15 @@ import { FeedbackComponent } from './feedback.component';
 describe('FeedbackComponent', () => {
   let component: FeedbackComponent;
   let fixture: ComponentFixture<FeedbackComponent>;
-
-
+  //let router = { navigate: jasmine.createSpy('navigate') }
+  let routerSpy = { navigate: jasmine.createSpy('navigate') };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FeedbackComponent]
+      declarations: [FeedbackComponent],
+      providers: [
+        { provide: Router, useValue: routerSpy }
+      ]
     })
 
       .compileComponents();
@@ -21,6 +25,7 @@ describe('FeedbackComponent', () => {
     fixture = TestBed.createComponent(FeedbackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
   });
 
   it('should create', () => {
@@ -34,9 +39,9 @@ describe('FeedbackComponent', () => {
     expect(ctrl?.valid).toBeFalsy();
   });
 
-  /*it('cancel navigates to home page', () => {
-    const routerSpy = spyOn(router, 'navigate');
+  it('cancel navigates to home page', () => {
+    //const routerSpy = spyOn(router, 'navigate');
     component.cancel();
-    expect(routerSpy).toHaveBeenCalledWith(['home']);
-  });*/
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['home']);
+  });
 });
