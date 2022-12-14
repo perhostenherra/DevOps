@@ -23,6 +23,7 @@ export class FeedbackComponent implements OnInit {
   constructor(public router: Router) { }
 
   ngOnInit(): void {
+    //THIS IS A FIX
   }
 
   cancel() {
