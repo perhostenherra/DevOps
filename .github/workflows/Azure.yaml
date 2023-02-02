@@ -24,7 +24,7 @@ on:
 
 env:
   Azure_WEBAPP_NAME: pepperoni
-  NODE_VERSION: '14.x'                # set this to the node version to use
+  NODE_VERSION: '16.x'                # set this to the node version to use
 
 jobs:
   build:
@@ -46,7 +46,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: node-app
-        path: public/
+        path: dist/angular-example-app
         
   build-docker-image:
     runs-on: ubuntu-latest
