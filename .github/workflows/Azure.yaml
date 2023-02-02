@@ -24,7 +24,7 @@ on:
 
 env:
   Azure_WEBAPP_NAME: pepperoni
-  NODE_VERSION: '16.x'                # set this to the node version to use
+  NODE_VERSION: '16.js'                # set this to the node version to use
 
 jobs:
   build:
