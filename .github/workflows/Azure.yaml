@@ -95,5 +95,5 @@ jobs:
         with:
           app-name: ${{ env.pepperoni }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: 'ghcr.io/perhostenherra/devops:a39be10bff5f538d78f8ffc8456e624eb3d8b26c'
+          images: 'ghcr.io/perhostenherra/devops:a39be10bff5f538d78f8ffc8456e624eb3d8b26c@sha256:572925970cd393e00b129a596803db5c131c49c5bfe382eaf89b45a00ef1ac09'
 
