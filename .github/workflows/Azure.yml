@@ -19,8 +19,7 @@
 
 on:
   push:
-    branches: 
-      -master
+    branches: [ "master" ]
   workflow_dispatch:
 
 env:
@@ -55,7 +54,7 @@ jobs:
 
     steps:
     
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - uses: actions/download-artifact@master
         with: 
           name: node-app
