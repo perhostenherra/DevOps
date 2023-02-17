@@ -24,7 +24,7 @@ on:
 
 env:
   Azure_WEBAPP_NAME: pepperoni
-  NODE_VERSION: '16.x'                # set this to the node version to use
+  NODE_VERSION: '14.x'                # set this to the node version to use
 
 jobs:
   build:
@@ -53,8 +53,8 @@ jobs:
     needs: build
 
     steps:
-
-      - uses: actions/checkout@v3
+      - name: Checkout
+      - uses: actions/checkout@v1
       - uses: actions/download-artifact@master
         with: 
           name: node-app
@@ -95,6 +95,11 @@ jobs:
     steps:
       - name: Lowercase the repo name
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+        
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: node-app
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
